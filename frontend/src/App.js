@@ -5,6 +5,7 @@ import Form from 'react-bootstrap/Form';
 import Navigation from "./Components/Navbar";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import CustomExperiment from "./Components/CustomExperiment";
+import AllExperiment from "./Components/AllExperiment";
 import Landing from "./Components/Landing";
 
 function App() {
@@ -18,8 +19,8 @@ function App() {
           <Route path="/custom_experiment">
             <CustomExperiment/>
           </Route>
-          <Route path="/custom_experiment">
-          <CustomExperiment/>
+          <Route path="/all_experiment">
+          <AllExperiment/>
           </Route>
           </Switch>
       </BrowserRouter>
