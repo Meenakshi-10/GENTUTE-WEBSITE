@@ -1,6 +1,7 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
+__pycache__
 /frontend/node_modules
 /.pnp
 .pnp.js
@@ -26,4 +27,4 @@ yarn-error.log*
 .env
 .venv
 /backend/flask-env
-/__pycache__
+
