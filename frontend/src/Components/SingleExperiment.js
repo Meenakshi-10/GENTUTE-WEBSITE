@@ -17,25 +17,28 @@ const pstyle = {
 
 function SingleExperiment(props) {
     console.log(props.stepNum)
-    const steps = Array(props.stepNum).keys();
-    for(let numbers of steps){
-        console.log(numbers);
+    const steps = [];
+    let curStep=1;
+    while(curStep<=props.stepNum){
+        steps.push(curStep)
+        curStep+=1
     }
-    const RenderCarousel  = () => Array.from(steps).map((step) => (
-            <p>HELLO!</p>         
-        // <div>
-        //     <img src={"https://res.cloudinary.com/dn7jk2swt/image/upload/v1666801851/steps/"+(step+1).toString()+".png"} style = {mystyle}/>
-        //     <p className="legend">Expose the rod to a bunsen burner</p>
-        // </div>
-    ))
+    
     return (
         <div style = {{backgroundColor: '#ececec', height: '100vh'}}>
         <Navigation />
         <div style = {{width: '35%', height: '35%', marginLeft: '32%', marginTop: '5%'}}>
         <Carousel showThumbs = {false} showArrows={true}>
-            <div>
-            <RenderCarousel />
-            </div>
+                {
+                    steps.map((step) => (
+                        (
+                            <div>
+                                <img src={"https://res.cloudinary.com/dn7jk2swt/image/upload/v1666801851/steps/"+(step).toString()+".png"} style = {mystyle}/>
+                                <p className="legend">Expose the rod to a bunsen burner</p>
+                            </div>
+                        )
+                    ))
+                }
                 {/* <div>
                 <img src="https://res.cloudinary.com/dn7jk2swt/image/upload/v1666801851/steps/1.png" style = {mystyle} />
                 <div style = {pstyle}>
