@@ -15,15 +15,29 @@ const pstyle = {
     marginTop: '15%'
 };
 
-function SingleExperiment() {
+function SingleExperiment(props) {
+    console.log(props.stepNum)
+    const steps = Array(props.stepNum).keys();
+    for(let numbers of steps){
+        console.log(numbers);
+    }
+    const RenderCarousel  = () => Array.from(steps).map((step) => (
+            <p>HELLO!</p>         
+        // <div>
+        //     <img src={"https://res.cloudinary.com/dn7jk2swt/image/upload/v1666801851/steps/"+(step+1).toString()+".png"} style = {mystyle}/>
+        //     <p className="legend">Expose the rod to a bunsen burner</p>
+        // </div>
+    ))
     return (
-        
         <div style = {{backgroundColor: '#ececec', height: '100vh'}}>
         <Navigation />
         <div style = {{width: '35%', height: '35%', marginLeft: '32%', marginTop: '5%'}}>
         <Carousel showThumbs = {false} showArrows={true}>
-                <div>
-                <img src={step1}style = {mystyle} />
+            <div>
+            <RenderCarousel />
+            </div>
+                {/* <div>
+                <img src="https://res.cloudinary.com/dn7jk2swt/image/upload/v1666801851/steps/1.png" style = {mystyle} />
                 <div style = {pstyle}>
                 <p className="legend">Dip a rod in conc. HCl</p>
                 </div>
@@ -40,7 +54,7 @@ function SingleExperiment() {
                 <div>
                     <img src={step4} style = {mystyle} />
                     <p className="legend">A red flame is observed</p>
-                </div>
+                </div> */}
             </Carousel>
             </div>
         </div>

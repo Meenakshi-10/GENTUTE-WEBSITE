@@ -26,13 +26,13 @@ function App() {
           <ExperimentList/>
           </Route>
           <Route path="/single_experiment">
-          <SingleExperiment/>
+          <SingleExperiment stepNum={4}/>
           </Route>
           <Route path="/salt_analysis">
           <SaltAnalysis/>
           </Route>
           <Route path="/single_observation">
-          <SingleObservation/>
+          <SingleObservation />
           </Route>
           </Switch>
       </BrowserRouter>
