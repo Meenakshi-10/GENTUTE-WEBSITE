@@ -1,0 +1,35 @@
+{
+    "1": [
+	{
+            "add": "add"
+        },
+        {
+            "apparatus": "rod"
+        },
+        {
+            "chemicals/solution": "yellow"
+        }
+    ],
+    "2": [
+	{
+            "heat": "heat"
+        },
+        {
+            "chemicals/solution": "yellow"
+        }
+    ],
+    "3": [
+	{
+            "filter": "filter"
+        },
+	{
+            "chemicals/solution": "yellow"
+        }
+       
+    ],
+    "4": [
+        {
+            "apparatus": "rod"
+        }
+    ]
+}

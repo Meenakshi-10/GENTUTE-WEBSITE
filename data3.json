@@ -1,0 +1,55 @@
+{
+    "1": [
+	{
+            "in": "in"
+        },
+        {
+            "apparatus": "beaker"
+        },
+        {
+            "chemicals/solution": "colorless"
+        }
+    ],
+    "2": [
+	{
+            "in": "in"
+        },
+        {
+            "apparatus": "beaker"
+        },
+        {
+            "chemicals/salt": "green"
+        }
+    ],
+    "3": [
+	{
+            "in": "in"
+        },
+        {
+            "apparatus": "beaker"
+        },
+        {
+            "chemicals/solution": "yellow"
+        }
+    ],
+    "4": [
+        {
+            "heat": "heat"
+        },
+	{
+	    "apparatus": "beaker"
+	}
+    ],
+   "5": [
+	{   "chemicals/solution": "colorless"
+	}
+    ],
+   "6": [
+	{
+	   "filter": "filter"
+	},
+	{
+	   "
+
+	   
+}

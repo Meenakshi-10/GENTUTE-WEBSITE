@@ -5,8 +5,11 @@ import Form from 'react-bootstrap/Form';
 import Navigation from "./Components/Navbar";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import CustomExperiment from "./Components/CustomExperiment";
-import AllExperiment from "./Components/AllExperiment";
+import ExperimentList from "./Components/ExperimentList";
 import Landing from "./Components/Landing";
+import SingleExperiment from "./Components/SingleExperiment";
+import SaltAnalysis from "./Components/SaltAnalysis";
+import SingleObservation from './Components/SingleObservation';
 
 function App() {
   return (
@@ -20,7 +23,16 @@ function App() {
             <CustomExperiment/>
           </Route>
           <Route path="/all_experiment">
-          <AllExperiment/>
+          <ExperimentList/>
+          </Route>
+          <Route path="/single_experiment">
+          <SingleExperiment/>
+          </Route>
+          <Route path="/salt_analysis">
+          <SaltAnalysis/>
+          </Route>
+          <Route path="/single_observation">
+          <SingleObservation/>
           </Route>
           </Switch>
       </BrowserRouter>
