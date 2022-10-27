@@ -1,0 +1,20 @@
+apparatus->\b(rod|beaker|china dish)\b
+red-flame->\b(red flame)\b
+green-flame->\b(green flame)\b
+white-salt->\b(Na|Ca|Ba|Mg|Li|Zn)([0-9]?)((C|N|O|F|P|S|Cl|Br)([0-9]?))+\b
+blue-solution->\b(CuSO4 solution)\b
+brown-solution->\b(\(NH4\)2\[Ce\(NO3\)6\]|CeNO3)\b
+yellow-solution->\b(HCl)\b
+purple-solution->\b(KMnO4 solution)\b
+green-solution->\b(FeSO4 solution|green solution)\b
+colorless-solution->\b(C2H4|C2H6|C3H6|C3H8|C2H5OH|CH3OH|CH3CHO|C2H5OH|H2O|colorless solution)\b
+green-salt->\b(FeSO4 salt)\b
+bronze-metal->\b(Cu)\b
+black-metal->\b(Fe)\b
+grey-metal->\b(Al|Zn)\b
+red-precipitate->\b(red precipitate)\b
+green-crystal->\b(green crystals?)\b
+add->\b(in|on|into|onto|(A|a)dd)\b
+heat->\b((H|h)eat)\b
+filter->\b((F|f)ilter)\b
+memory->\b(it|the (beaker|mixture|solution|test tube))
