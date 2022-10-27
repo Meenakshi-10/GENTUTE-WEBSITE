@@ -1,4 +1,4 @@
-from crypt import methods
+#from crypt import methods
 from urllib import request
 from flask import Flask,jsonify,request
 from NaturalLanguageProcessing import * 

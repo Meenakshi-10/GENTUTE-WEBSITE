@@ -34,7 +34,7 @@ function SingleExperiment(props) {
                         (
                             <div>
                                 <img src={"https://res.cloudinary.com/dn7jk2swt/image/upload/v1666801851/steps/"+(step).toString()+".png"} style = {mystyle}/>
-                                <p className="legend">Expose the rod to a bunsen burner</p>
+                                <p style = {pstyle} className="legend">Expose the rod to a bunsen burner</p>
                             </div>
                         )
                     ))
