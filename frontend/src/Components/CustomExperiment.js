@@ -3,38 +3,41 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Navigation from "./Navbar";
 import axios from "axios";
+import SingleExperiment from "./SingleExperiment"
 
 function CustomExperiment() {
   const [exp, setExp] = useState({
     text: ""
   });
+
+  const [processExp, setProcessExp] = useState({
+    flag: false,
+    steps: ""
+  })
   const handleChange = (e) => {
     setExp({
       text: e.target.value,
     });
   }
+
+  const postExperiment = async () => {
+    return await axios.post("http://127.0.0.1:5000/process-experiment/",exp)
+  }
     const submit = () => {
-      console.log(exp);
-      if (exp) {
-        axios({
-          method: "POST",
-          url: "http://localhost:5000/process_experiment",
-          data: exp,
-          headers: { "Content-Type": "application/json" },
-        })
-        .then((res) => {
-          console.log(res);
-        })
-        .catch((res,error) => {
-          console.log("Problem submitting experiment", error);
-          window.location.reload()
-          setExp(() => "");
-        });
-    }
+       postExperiment.then((response) => {
+        console.log(response.data.message)
+        setProcessExp({
+        flag: true,
+        steps: response.data.message['steps']
+       })
+       })
   }
     return (
         <div>
         <Navigation />
+        {processExp.flag ? (
+          <SingleExperiment steps={["hi","hello"]} />
+        ):(
         <div style = {{width: '40%', marginTop: '10%', marginLeft: '30%', padding: '5%', backgroundColor: 'white'}}>
         <Form>
         <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -47,6 +50,7 @@ function CustomExperiment() {
          </Button>
        </Form>
       </div>
+        )}
         </div>
         
     );

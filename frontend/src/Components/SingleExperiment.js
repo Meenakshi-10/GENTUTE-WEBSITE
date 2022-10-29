@@ -16,13 +16,8 @@ const pstyle = {
 };
 
 function SingleExperiment(props) {
-    console.log(props.stepNum)
-    const steps = [];
-    let curStep=1;
-    while(curStep<=props.stepNum){
-        steps.push(curStep)
-        curStep+=1
-    }
+    console.log(props.steps)
+    const steps= props.steps
     
     return (
         <div style = {{backgroundColor: '#ececec', height: '100vh'}}>
@@ -30,11 +25,11 @@ function SingleExperiment(props) {
         <div style = {{width: '35%', height: '35%', marginLeft: '32%', marginTop: '5%'}}>
         <Carousel showThumbs = {false} showArrows={true}>
                 {
-                    steps.map((step) => (
+                    steps.map((index,step) => (
                         (
                             <div>
-                                <img src={"https://res.cloudinary.com/dn7jk2swt/image/upload/v1666801851/steps/"+(step).toString()+".png"} style = {mystyle}/>
-                                <p style = {pstyle} className="legend">Expose the rod to a bunsen burner</p>
+                                <img src={"https://res.cloudinary.com/dn7jk2swt/image/upload/v1666801851/steps/"+(index+1).toString()+".png"} style = {mystyle}/>
+                                <p style = {pstyle} className="legend">{step}</p>
                             </div>
                         )
                     ))
