@@ -18,8 +18,15 @@ def process_experiment():
             steps=sent_tokenize(experiment["text"])
             nlp(experiment["text"])
             cgi()
-            data={'steps':steps}
-            return jsonify(data)
+            data={}
+            for i,step in enumerate(steps):
+                data[str(i+1)]=str(step)
+            print(data)
+            #data={"post":"works"}
+            data={"steps":steps}
+            return json.dumps(data)
+        elif request.method=='GET':
+            return jsonify({'steps':"psych"})
     except Exception as e:
         print(e)
         data={'steps':""}

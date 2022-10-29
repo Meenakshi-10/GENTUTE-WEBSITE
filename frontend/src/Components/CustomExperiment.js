@@ -10,8 +10,9 @@ function CustomExperiment() {
     text: ""
   });
 
+  const [count,setCount] = useState(0);
   const [processExp, setProcessExp] = useState({
-    flag: false,
+    flag: 0,
     steps: ""
   })
   const handleChange = (e) => {
@@ -20,24 +21,36 @@ function CustomExperiment() {
     });
   }
 
-  const postExperiment = async () => {
-    return await axios.post("http://127.0.0.1:5000/process-experiment/",exp)
-  }
-    const submit = () => {
-       postExperiment.then((response) => {
-        console.log(response.data.message)
+  const submit = async () => {
+    try {
+      setCount(count+1);
+      fetch("http://127.0.0.1:5000/process-experiment/",{
+        method: 'POST',
+        mode: 'cors',
+        body: JSON.stringify(exp)
+      })
+      .then(res => res.json())
+      .then(data => {
         setProcessExp({
-        flag: true,
-        steps: response.data.message['steps']
-       })
-       })
+          flag: 1,
+          steps: data["steps"]
+        })
+        setExp({
+          text: ""
+        })
+      });
+    } catch (error) {
+      console.log(error);
+    }
   }
-    return (
+
+  const isFormSubmitted = () => {
+    if(processExp.flag==1){
+      return <SingleExperiment steps ={processExp.steps} />
+    }else{
+      return (
         <div>
         <Navigation />
-        {processExp.flag ? (
-          <SingleExperiment steps={["hi","hello"]} />
-        ):(
         <div style = {{width: '40%', marginTop: '10%', marginLeft: '30%', padding: '5%', backgroundColor: 'white'}}>
         <Form>
         <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -45,14 +58,19 @@ function CustomExperiment() {
            <Form.Control type="textarea" value = {exp.text} onChange = {handleChange}/>
          </Form.Group>
         
-         <Button variant="primary" type="submit" onClick={submit}>
+         <Button variant="primary" type="button" onClick={submit}>
            Submit
          </Button>
        </Form>
-      </div>
-        )}
-        </div>
-        
+       </div>
+       </div>
+      )
+    }
+  }
+    return (
+      <div>
+        {isFormSubmitted()}
+      </div>  
     );
   }
 

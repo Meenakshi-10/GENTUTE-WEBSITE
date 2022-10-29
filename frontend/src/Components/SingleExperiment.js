@@ -25,7 +25,7 @@ function SingleExperiment(props) {
         <div style = {{width: '35%', height: '35%', marginLeft: '32%', marginTop: '5%'}}>
         <Carousel showThumbs = {false} showArrows={true}>
                 {
-                    steps.map((index,step) => (
+                    steps.map((step,index) => (
                         (
                             <div>
                                 <img src={"https://res.cloudinary.com/dn7jk2swt/image/upload/v1666801851/steps/"+(index+1).toString()+".png"} style = {mystyle}/>
