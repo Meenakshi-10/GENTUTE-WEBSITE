@@ -1,12 +1,16 @@
+from unittest import result
 from flask import Flask, jsonify, request, json
 from flask_cors import CORS
 from nltk.tokenize import sent_tokenize
 from ComputerGraphics import *
 from NaturalLanguageProcessing import *
-from flask_mongoengine import MongoEngine
+from flask_pymongo import PyMongo
 
 app = Flask(__name__)
 CORS(app)
+app.config["MONGO_URI"] = "mongodb+srv://mongo_root:mongo_password@cluster0.zl306ml.mongodb.net/gentute"
+mongodb_client = PyMongo(app)
+db_cations = mongodb_client.db.cation_test
 
 @app.route('/process-experiment/',methods=['GET','POST'])
 def process_experiment():
@@ -30,26 +34,13 @@ def process_experiment():
         data={'steps':""}
         return jsonify(data)
 
-app.config['MONGODB_SETTINGS'] = {
-    'db': 'gentute',
-    'host': 'localhost',
-    'port': 5000
-}
-db = MongoEngine()
-db.init_app(app)
-
-class Experiment(db.Document):
-    eid = db.IntField()
-    obs = db.StringField()
-    def to_json(self):
-        return {"eid": self.eid,
-                "obs": self.obs}
-
 @app.route('/salt-analysis/', methods=['GET'])
 def query_records():
     eid = request.args.get('eid')
-    experiment = Experiment.objects(eid=eid).first()
-    if not experiment:
+    res = db_cations.find({"EID":str(eid)})
+    out = [{'ID':i['EID'],'OBS':i['OBS']} for i in res]
+    print(out)
+    if not res:
         return jsonify({'error': 'data not found'})
     else:
-        return jsonify(experiment.to_json())
+        return jsonify(out)
