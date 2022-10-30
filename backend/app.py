@@ -1,11 +1,9 @@
-import logging
-
 from flask import Flask, jsonify, request, json
 from flask_cors import CORS
 from nltk.tokenize import sent_tokenize
-
 from ComputerGraphics import *
 from NaturalLanguageProcessing import *
+from flask_mongoengine import MongoEngine
 
 app = Flask(__name__)
 CORS(app)
@@ -31,3 +29,27 @@ def process_experiment():
         print(e)
         data={'steps':""}
         return jsonify(data)
+
+app.config['MONGODB_SETTINGS'] = {
+    'db': 'gentute',
+    'host': 'localhost',
+    'port': 5000
+}
+db = MongoEngine()
+db.init_app(app)
+
+class Experiment(db.Document):
+    eid = db.IntField()
+    obs = db.StringField()
+    def to_json(self):
+        return {"eid": self.eid,
+                "obs": self.obs}
+
+@app.route('/salt-analysis/', methods=['GET'])
+def query_records():
+    eid = request.args.get('eid')
+    experiment = Experiment.objects(eid=eid).first()
+    if not experiment:
+        return jsonify({'error': 'data not found'})
+    else:
+        return jsonify(experiment.to_json())
