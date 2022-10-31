@@ -34,25 +34,6 @@ function SingleExperiment(props) {
                         )
                     ))
                 }
-                {/* <div>
-                <img src="https://res.cloudinary.com/dn7jk2swt/image/upload/v1666801851/steps/1.png" style = {mystyle} />
-                <div style = {pstyle}>
-                <p className="legend">Dip a rod in conc. HCl</p>
-                </div>
-                
-                </div>
-                <div>
-                    <img src={step2} style = {mystyle} />
-                    <p className="legend">Now dip the rod in LiCl2 salt</p>
-                </div>
-                <div>
-                    <img src={step3} style = {mystyle}/>
-                    <p className="legend">Expose the rod to a bunsen burner</p>
-                </div>
-                <div>
-                    <img src={step4} style = {mystyle} />
-                    <p className="legend">A red flame is observed</p>
-                </div> */}
             </Carousel>
             </div>
         </div>

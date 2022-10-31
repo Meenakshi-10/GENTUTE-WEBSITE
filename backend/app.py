@@ -8,7 +8,7 @@ from flask_pymongo import PyMongo
 
 app = Flask(__name__)
 CORS(app)
-app.config["MONGO_URI"] = "mongodb+srv://mongo_root:mongo_password@cluster0.zl306ml.mongodb.net/gentute"
+app.config["MONGO_URI"] = "mongodb://localhost:27017/gentute"
 mongodb_client = PyMongo(app)
 db_cations = mongodb_client.db.cation_test
 
@@ -37,9 +37,9 @@ def process_experiment():
 @app.route('/salt-analysis/', methods=['GET'])
 def query_records():
     eid = request.args.get('eid')
-    res = db_cations.find({"EID":str(eid)})
+    res = db_cations.find({"EID":int(eid)})
     out = [{'ID':i['EID'],'OBS':i['OBS']} for i in res]
-    print(out)
+    print(res)
     if not res:
         return jsonify({'error': 'data not found'})
     else:

@@ -9,7 +9,6 @@ import ExperimentList from "./Components/ExperimentList";
 import Landing from "./Components/Landing";
 import SingleExperiment from "./Components/SingleExperiment";
 import SaltAnalysis from "./Components/SaltAnalysis";
-import SingleObservation from './Components/SingleObservation';
 
 function App() {
   return (
@@ -30,9 +29,6 @@ function App() {
           </Route>
           <Route path="/salt_analysis">
           <SaltAnalysis/>
-          </Route>
-          <Route path="/single_observation">
-          <SingleObservation />
           </Route>
           </Switch>
       </BrowserRouter>
