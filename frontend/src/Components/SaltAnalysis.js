@@ -27,8 +27,42 @@ function SaltAnalysis() {
     }))
   }
   
-  const nextObservation = () => {
-    
+  const nextObservationFunction = () => {
+    let observation = ""
+    for(let i of obs.OPTIONS){
+      if(i.isObserved){
+        observation = i.name
+        break
+      }
+    }
+    let currentObservation = {
+      eid: obs.EID,
+      obs: observation
+    }
+    let nextObservation=""
+    fetch("http://127.0.0.1:5000/salt-analysis/next-observation",{
+      method: 'POST',
+      mode: 'cors',
+      body: JSON.stringify(currentObservation)
+    })
+    .then(res => res.json())
+    .then(data => {
+      nextObservation =data["next_obs"]
+      fetch(`http://127.0.0.1:5000/salt-analysis/get-experiment?eid=${nextObservation}`,{
+      method: 'GET',
+      mode: 'cors'
+      })
+      .then(res => res.json())
+      .then(data => {
+        console.log(data)
+        setObs((prevState) => ({
+         ... prevState,
+         EID: nextObservation,
+         OBS: data["OBS"]
+        }))
+        console.log(obs)
+      })
+    })
   }
     return (
         <div>
@@ -56,7 +90,7 @@ function SaltAnalysis() {
         </div>  
     </div>   
 </div>
-<button style = {{marginLeft: "47%", marginTop: "2%"}} onClick = {nextObservation} >Continue</button>
+<button style = {{marginLeft: "47%", marginTop: "2%"}} onClick = {nextObservationFunction} >Continue</button>
 </div>
     );
   }
