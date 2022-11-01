@@ -1,17 +1,35 @@
 import React, { useState } from "react";
 import "./SingleObservation.css"
 import Navigation from "./Navbar";
+import { Button } from "react-bootstrap";
 
 function SaltAnalysis() {
-  const [obs, setobs] = useState({
+  const [obs, setObs] = useState({
     EID: 1,
     IMG: "1",
     OBS: "Dip a rod in conc. HCl then dip it in the salt and expose it to the flame. Observe the color of the flame.",
-    OPTIONS : ["Crimson red", "Brick red", "Green", "No color"]
+    OPTIONS : [{name:"Crimson red",isObserved:false}, {name:"Brick red",isObserved:false},{name:"Green",isObserved:false},{name:"No Colour",isObserved:false}]
   });
 
-  const changeHandler = () => {}
+  const changeHandler = (item) => {
+    const name = item.target.name
+    const isChecked = item.target.checked
+    const currentObservations=obs.OPTIONS
+    for (let observation of currentObservations){
+      if(observation.name===name){
+        observation.isObserved=isChecked
+        break
+      }
+    }
+    setObs((prevState) => ({
+      ... prevState,
+      OPTIONS : currentObservations
+    }))
+  }
   
+  const nextObservation = () => {
+    
+  }
     return (
         <div>
         <Navigation></Navigation>
@@ -25,17 +43,20 @@ function SaltAnalysis() {
                 <hr class="mb-30"/>
                   
                   {
-                      obs.OPTIONS.map(option => (( <label class="check">
-				                                           <input type="checkbox"/>
-				                                           <span>{option}</span>
-				                                           </label>
-                                                  ) ))
+                      obs.OPTIONS.map(option => (
+                        (
+                          <label class="check">
+                            <input type="checkbox" name={option.name} checked={option.isObserved} onChange={changeHandler} />
+                            <span>{option.name}</span>
+				                  </label>
+                        )
+                      ))
                   }
             </div> 
         </div>  
     </div>   
 </div>
-<button style = {{marginLeft: "47%", marginTop: "2%"}} onChange = {changeHandler}>Continue</button>
+<button style = {{marginLeft: "47%", marginTop: "2%"}} onClick = {nextObservation} >Continue</button>
 </div>
     );
   }
