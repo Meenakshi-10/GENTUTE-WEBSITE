@@ -1,37 +1,23 @@
 {
     "1": [
         {
-            "add": "in"
-        },
-        {
-            "apparatus": "rod"
-        },
-        {
-            "chemicals/solution": "yellow"
+            "chemicals/solution": "colorless"
         }
     ],
     "2": [
         {
-            "add": "in"
+            "add": "Add"
         },
         {
-            "apparatus": "rod"
+            "chemicals/solution": "brown"
         },
         {
-            "chemicals/salt": "green"
+            "memory": "it"
         }
     ],
     "3": [
         {
-            "heat": "Heat"
-        },
-        {
-            "apparatus": "rod"
-        }
-    ],
-    "4": [
-        {
-            "chemicals/flame": "green"
+            "chemicals/precipitate": "red"
         }
     ]
 }

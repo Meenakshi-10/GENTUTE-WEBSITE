@@ -27,7 +27,7 @@ def action_place(d, stepnum):
     cloudinary.uploader.upload(img[10:-3], public_id =  stepnum)
 
 def action_heat(d, stepnum):
-  burner = "objects/apparatus/bunsen_burner.jpg"
+  burner = "objects/apparatus/bunsen_burner.png"
   o_img = d[1]  # this is the overlay image
   o_path = list(o_img.keys())[0]
   if(o_path == "memory"):

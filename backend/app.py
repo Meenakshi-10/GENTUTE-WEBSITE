@@ -44,7 +44,7 @@ def query_records():
     if not res:
         return jsonify({'error': 'data not found'})
     else:
-        return jsonify({'ID':res['EID'],'OBS':res['OBS']})
+        return jsonify({'EID':res['EID'],'OBS':res['OBS'], 'IMG':res['IMG'], 'OPTIONS': res['OPTIONS']})
 
 @app.route('/salt-analysis/next-observation',methods=['POST'])
 def next_observation():

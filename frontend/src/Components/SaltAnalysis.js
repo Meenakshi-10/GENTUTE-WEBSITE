@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./SingleObservation.css"
 import Navigation from "./Navbar";
-import { Button } from "react-bootstrap";
+import DisplayIon from "./DisplayIon";
 
 function SaltAnalysis() {
   const [obs, setObs] = useState({
@@ -11,6 +11,13 @@ function SaltAnalysis() {
     OPTIONS : [{name:"Crimson red",isObserved:false}, {name:"Brick red",isObserved:false},{name:"Green",isObserved:false},{name:"No Colour",isObserved:false}]
   });
 
+  let sequence = "1"
+  let end = 0;
+  const sequence_map = {
+    "12" : "Ba2+"
+  }
+
+  
   const changeHandler = (item) => {
     const name = item.target.name
     const isChecked = item.target.checked
@@ -28,7 +35,7 @@ function SaltAnalysis() {
   }
   
   const nextObservationFunction = () => {
-    let observation = ""
+    let observation = "";
     for(let i of obs.OPTIONS){
       if(i.isObserved){
         observation = i.name
@@ -48,6 +55,13 @@ function SaltAnalysis() {
     .then(res => res.json())
     .then(data => {
       nextObservation =data["next_obs"]
+      if(nextObservation == 0)
+      {
+        console.log("sequence:", sequence_map[sequence]);
+        end = 1;
+        
+      }
+      else
       fetch(`http://127.0.0.1:5000/salt-analysis/get-experiment?eid=${nextObservation}`,{
       method: 'GET',
       mode: 'cors'
@@ -55,15 +69,27 @@ function SaltAnalysis() {
       .then(res => res.json())
       .then(data => {
         console.log(data)
+        let arr = []
+        for(let i of data['OPTIONS'])
+        {
+          arr.push({name: i, isObserved: false});
+        }
         setObs((prevState) => ({
          ... prevState,
          EID: nextObservation,
-         OBS: data["OBS"]
+         OBS: data["OBS"],
+         IMG: data["IMG"],
+         OPTIONS: arr
         }))
         console.log(obs)
       })
     })
+    sequence = sequence + String(obs.EID);
   }
+   if(end == 1)
+   {
+    return <DisplayIon cation = {sequence_map[sequence]}/>
+   }
     return (
         <div>
         <Navigation></Navigation>
@@ -73,9 +99,8 @@ function SaltAnalysis() {
             <div class="card-body text-center">
                 <h4 class="card-title">{obs.OBS}</h4>
                 <p class="card-description">Select from the options below</p>
-                <img src = {"https://res.cloudinary.com/dn7jk2swt/image/upload/v1667240302/salt-analysis/" + obs.IMG + ".jpg"}/>
-                <hr class="mb-30"/>
-                  
+                <img src = {"https://res.cloudinary.com/dn7jk2swt/image/upload/v1667240302/salt-analysis/" + obs.IMG + ".png"} width = '50%' height= '50%'/>
+                <hr class="mb-30"/>  
                   {
                       obs.OPTIONS.map(option => (
                         (
