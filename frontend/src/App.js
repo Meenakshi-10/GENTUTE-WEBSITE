@@ -8,7 +8,7 @@ import CustomExperiment from "./Components/CustomExperiment";
 import ExperimentList from "./Components/ExperimentList";
 import Landing from "./Components/Landing";
 import SingleExperiment from "./Components/SingleExperiment";
-import SaltAnalysis from "./Components/SaltAnalysis";
+import CationAnalysis from "./Components/CationAnalysis";
 import DisplayIon from './Components/DisplayIon';
 
 function App() {
@@ -28,8 +28,8 @@ function App() {
           <Route path="/single_experiment">
           <SingleExperiment stepNum={4}/>
           </Route>
-          <Route path="/salt_analysis">
-          <SaltAnalysis/>
+          <Route path="/cation_analysis">
+          <CationAnalysis/>
           </Route>
           <Route path="/display_ion">
           <DisplayIon/>

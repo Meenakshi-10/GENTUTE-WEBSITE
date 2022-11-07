@@ -15,7 +15,7 @@ function ExperimentList() {
                 <div style = {{padding: '2%'}}>
                 <h4>Salt Analysis</h4>
                 <h2 style = {{fontSize: '20px', color: 'grey', fontFamily: 'arial'}}>An interactive step by step tutorial for performing salt analysis</h2>
-                <a href = "/salt_analysis">
+                <a href = "/cation_analysis">
                 <Button variant="dark">View</Button>
                 </a>
                 </div>

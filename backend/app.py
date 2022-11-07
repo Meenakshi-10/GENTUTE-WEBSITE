@@ -35,7 +35,7 @@ def process_experiment():
         data={'steps':""}
         return jsonify(data)
 
-@app.route('/salt-analysis/get-experiment', methods=['GET'])
+@app.route('/cation-analysis/get-experiment', methods=['GET'])
 def query_records():
     eid = request.args.get('eid')
     res = db_cations.find_one({"EID":int(eid)})
@@ -46,7 +46,7 @@ def query_records():
     else:
         return jsonify({'EID':res['EID'],'OBS':res['OBS'], 'IMG':res['IMG'], 'OPTIONS': res['OPTIONS']})
 
-@app.route('/salt-analysis/next-observation',methods=['POST'])
+@app.route('/cation-analysis/next-observation',methods=['POST'])
 def next_observation():
     if request.method == "POST":
         data = json.loads(request.data)

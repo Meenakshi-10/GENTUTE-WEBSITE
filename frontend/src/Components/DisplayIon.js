@@ -2,7 +2,7 @@ import React from "react";
 import "./SingleObservation.css"
 import Navigation from "./Navbar";
 function DisplayIon(props) {
-    console.log(props)
+    console.log(props.cation)
     return (
         
         <div>
@@ -12,6 +12,7 @@ function DisplayIon(props) {
         <div class="card">
             <div class="card-body text-center">
                 <h4 class="card-title">The cation is {props.cation}</h4>
+                <h1 style={{color:"blue", fontSize: "100px", padding: "50px"}}> {props.cation}</h1>
             </div> 
         </div>  
     </div>   
