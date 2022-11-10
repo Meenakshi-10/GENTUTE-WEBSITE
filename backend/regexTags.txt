@@ -3,13 +3,13 @@ red-flame->\b(red flame)\b
 green-flame->\b(green flame)\b
 violet-flame->\b(violet flame)\b
 yellow-flame->\b(yellow flame)\b
-white-salt->\b(Na|Ca|Ba|Mg|Li|Zn)([0-9]?)((C|N|O|F|P|S|Cl|Br)([0-9]?))+\b
+white-salt->\b(NH4SO4)|(Na|Ca|Ba|Mg|Li|Zn)([0-9]?)((C|N|O|F|P|S|Cl|Br)([0-9]?))+\b
 blue-solution->\b(CuSO4 solution)\b
 brown-solution->\b(\\(NH4\\)2\\[Ce\\(NO3\\)6\\]|CeNO3)\b
 yellow-solution->\b(HCl)\b
 purple-solution->\b(KMnO4 solution)\b
 green-solution->\b(FeSO4 solution|green solution)\b
-colorless-solution->\b(C2H4|C2H6|C3H6|C3H8|C2H5OH|CH3OH|CH3CHO|C2H5OH|H2O|colorless solution)\b
+colorless-solution->\b(C2H4|C2H6|C3H6|C3H8|C2H5OH|CH3OH|CH3CHO|C2H5OH|H2O|colorless solution|clear filtrate)\b
 blue-salt->\b(CuSO4 salt)\b
 green-salt->\b(FeSO4 salt)\b
 purple-salt->\b(KCl salt)\b
@@ -17,8 +17,8 @@ bronze-metal->\b(Cu)\b
 black-metal->\b(Fe)\b
 grey-metal->\b(Al|Zn)\b
 red-precipitate->\b(red precipitate)\b
-green-crystal->\b(g|Green crystals?)\b
+green-crystal->\b((g|G)reen crystals?)\b
 add->\b(in|on|into|onto|(A|a)dd)\b
 heat->\b((H|h)eat)\b
 filter->\b((F|f)ilter)\b
-memory->\b(it|the (beaker|mixture|solution|test tube))
+memory->\b((i|I)t|the (beaker|mixture|solution|test tube|filtrate))

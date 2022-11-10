@@ -1,7 +1,7 @@
 {
     "1": [
         {
-            "chemicals/solution": "colorless"
+            "chemicals/solution": "green"
         }
     ],
     "2": [
@@ -9,7 +9,7 @@
             "add": "Add"
         },
         {
-            "chemicals/solution": "brown"
+            "chemicals/solution": "yellow"
         },
         {
             "memory": "it"
@@ -17,7 +17,49 @@
     ],
     "3": [
         {
-            "chemicals/precipitate": "red"
+            "chemicals/solution": "green"
+        }
+    ],
+    "4": [
+        {
+            "heat": "Heat"
+        },
+        {
+            "memory": "the mixture"
+        }
+    ],
+    "5": [
+        {
+            "chemicals/solution": "colorless"
+        }
+    ],
+    "6": [
+        {
+            "filter": "Filter"
+        },
+        {
+            "memory": "the solution"
+        }
+    ],
+    "7": [
+        {
+            "chemicals/solution": "colorless"
+        }
+    ],
+    "8": [
+        {
+            "heat": "Heat"
+        },
+        {
+            "memory": "the filtrate"
+        }
+    ],
+    "9": [
+        {
+            "chemicals/crystal": "green"
+        },
+        {
+            "chemicals/solution": "colorless"
         }
     ]
 }

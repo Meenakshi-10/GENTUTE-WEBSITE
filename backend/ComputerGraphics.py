@@ -137,4 +137,5 @@ def cgi():
     else:
         stepURL=action_place(data[step], int(stepnum))
     urls.append(stepURL)
+  print(urls)
   return urls
