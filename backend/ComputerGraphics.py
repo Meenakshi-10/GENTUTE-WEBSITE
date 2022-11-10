@@ -24,8 +24,7 @@ def action_place(d, stepnum):
     print(p)
     img = cloudinary.CloudinaryImage(p).image()
     stepnum = "steps/" + str(stepnum)
-    result=cloudinary.uploader.upload(img[10:-3], public_id =  stepnum)
-    print("---------------------------\nRESULT: ",result['url'],"\n----------------------------")
+    cloudinary.uploader.upload(img[10:-3], public_id =  stepnum)
 
 def action_heat(d, stepnum):
   burner = "objects/apparatus/bunsen_burner.png"

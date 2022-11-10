@@ -10,7 +10,6 @@ import Landing from "./Components/Landing";
 import SingleExperiment from "./Components/SingleExperiment";
 import CationAnalysis from "./Components/CationAnalysis";
 import DisplayIon from './Components/DisplayIon';
-import SaltAnalysis from './Components/SaltAnalysis';
 
 function App() {
   return (
@@ -28,9 +27,6 @@ function App() {
           </Route>
           <Route path="/single_experiment">
           <SingleExperiment stepNum={4}/>
-          </Route>
-          <Route path="/salt_analysis">
-            <SaltAnalysis/>
           </Route>
           <Route path="/cation_analysis">
           <CationAnalysis/>
