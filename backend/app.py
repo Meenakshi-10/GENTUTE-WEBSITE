@@ -22,13 +22,13 @@ def process_experiment():
             experiment=json.loads(request.data)
             steps=sent_tokenize(experiment["text"])
             nlp(experiment["text"])
-            cgi()
+            urls=cgi()
             data={}
             for i,step in enumerate(steps):
                 data[str(i+1)]=str(step)
             print(data)
             #data={"post":"works"}
-            data={"steps":steps}
+            data={"steps":steps,"urls":urls}
             return json.dumps(data)
         elif request.method=='GET':
             return jsonify({'steps':"psych"})

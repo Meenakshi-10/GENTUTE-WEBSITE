@@ -5,7 +5,7 @@ violet-flame->\b(violet flame)\b
 yellow-flame->\b(yellow flame)\b
 white-salt->\b(Na|Ca|Ba|Mg|Li|Zn)([0-9]?)((C|N|O|F|P|S|Cl|Br)([0-9]?))+\b
 blue-solution->\b(CuSO4 solution)\b
-brown-solution->\b(\\(NH4\\)2\\[Ce\\(NO3\\)6\\])\b
+brown-solution->\b(\\(NH4\\)2\\[Ce\\(NO3\\)6\\]|CeNO3)\b
 yellow-solution->\b(HCl)\b
 purple-solution->\b(KMnO4 solution)\b
 green-solution->\b(FeSO4 solution|green solution)\b

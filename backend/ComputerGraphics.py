@@ -24,7 +24,9 @@ def action_place(d, stepnum):
     print(p)
     img = cloudinary.CloudinaryImage(p).image()
     stepnum = "steps/" + str(stepnum)
-    cloudinary.uploader.upload(img[10:-3], public_id =  stepnum)
+    res = cloudinary.uploader.upload(img[10:-3], public_id =  stepnum)
+    return res['url']
+
 
 def action_heat(d, stepnum):
   burner = "objects/apparatus/bunsen_burner.png"
@@ -44,7 +46,8 @@ def action_heat(d, stepnum):
       {'flags': "layer_apply", 'y': -250}
   ])
   stepnum = "steps/" + str(stepnum)
-  cloudinary.uploader.upload(img[10:-3], public_id =  stepnum)
+  res = cloudinary.uploader.upload(img[10:-3], public_id =  stepnum)
+  return res['url']
 
 def action_filter(d, stepnum):
   filter_flask="objects/apparatus/filter.jpg"
@@ -62,7 +65,8 @@ def action_filter(d, stepnum):
   {'flags': "layer_apply", 'y': -185},
   ])
   stepnum = "steps/" + str(stepnum)
-  cloudinary.uploader.upload(img[10:-3], public_id =  stepnum)
+  res = cloudinary.uploader.upload(img[10:-3], public_id =  stepnum)
+  return res['url']
 
 def action_add(d, stepnum):
     print(d,stepnum)
@@ -92,7 +96,8 @@ def action_add(d, stepnum):
   ])
     print(img)
     stepnum = "steps/" + str(stepnum)
-    cloudinary.uploader.upload(img[10:-3], public_id =  stepnum)
+    res = cloudinary.uploader.upload(img[10:-3], public_id =  stepnum)
+    return res['url']
 
 
 # func_mapping = {
@@ -120,6 +125,7 @@ def cgi():
   action_list = ["add", "heat", "filter"]
   with open("tagged_text.json") as json_file:
     data = json.load(json_file)
+  urls=[]
   for step in data:
     stepnum = step[0]
     p = data[stepnum][0]
@@ -127,6 +133,8 @@ def cgi():
     action = list(p.keys())[0]
     if action in action_list:
         func = func_mapping[action]
-        func(data[step], int(stepnum))
+        stepURL=func(data[step], int(stepnum))
     else:
-        action_place(data[step], int(stepnum))
+        stepURL=action_place(data[step], int(stepnum))
+    urls.append(stepURL)
+  return urls

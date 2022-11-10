@@ -13,7 +13,8 @@ function CustomExperiment() {
   const [count,setCount] = useState(0);
   const [processExp, setProcessExp] = useState({
     flag: 0,
-    steps: ""
+    steps: "",
+    urls: ""
   })
   const handleChange = (e) => {
     setExp({
@@ -33,7 +34,8 @@ function CustomExperiment() {
       .then(data => {
         setProcessExp({
           flag: 1,
-          steps: data["steps"]
+          steps: data["steps"],
+          urls: data["urls"]
         })
         setExp({
           text: ""
@@ -46,7 +48,7 @@ function CustomExperiment() {
 
   const isFormSubmitted = () => {
     if(processExp.flag==1){
-      return <SingleExperiment steps ={processExp.steps} />
+      return <SingleExperiment steps ={processExp.steps}  urls = {processExp.urls}/>
     }else{
       return (
         <div>

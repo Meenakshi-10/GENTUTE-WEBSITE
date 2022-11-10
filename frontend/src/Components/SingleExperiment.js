@@ -18,6 +18,7 @@ const pstyle = {
 function SingleExperiment(props) {
     console.log(props.steps)
     const steps= props.steps
+    const urls = props.urls
     
     return (
         <div style = {{backgroundColor: '#ececec', height: '100vh'}}>
@@ -28,7 +29,7 @@ function SingleExperiment(props) {
                     steps.map((step,index) => (
                         (
                             <div>
-                                <img src={"https://res.cloudinary.com/dn7jk2swt/image/upload/v1666801851/steps/"+(index+1).toString()+".png"} style = {mystyle}/>
+                                <img src={urls[index]} style = {mystyle}/>
                                 <p style = {pstyle} className="legend">{step}</p>
                             </div>
                         )
