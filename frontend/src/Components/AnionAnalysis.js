@@ -1,14 +1,18 @@
 import React, { useState } from "react";
 import "./SingleObservation.css"
 import Navigation from "./Navbar";
-import DisplayIon from "./DisplayCation";
+import DisplayIon from "./DisplayAnion";
+import { useLocation } from "react-router-dom";
 
-function CationAnalysis() {
+function AnionAnalysis(props) {
+  const loc = useLocation()
+  const cation = loc.state?.cationDetail
+  console.log("Cation1:", cation)
   const [obs, setObs] = useState({
     EID: 1,
     IMG: "1",
-    OBS: "Dip a rod in conc. HCl then dip it in the salt and expose it to the flame. Observe the color of the flame.",
-    OPTIONS : [{name:"Crimson red",isObserved:false}, {name:"Brick red",isObserved:false},{name:"Green",isObserved:false},{name:"No Colour",isObserved:false}]
+    OBS: "Add salt to dil. H2SO4 . Heat the test tube. Observe the colour and smell of gas",
+    OPTIONS : [{name:"Colorless and odorless gas",isObserved:false}, {name:"Colorless gas with smell of rotten eggs",isObserved:false},{name:"Colorless gas with smell of sulphur",isObserved:false},{name:"Brown fumes",isObserved:false}]
   });
   const [ion, setIon] = useState({end: 0, sequence: ""})
 
@@ -18,13 +22,15 @@ function CationAnalysis() {
   if(ion.end === 1)
    {
     const sequence_map = {
-      "120" : {ion: "Ba", sup: "2+"},
-      "130" : {ion: "Sr", sup: "2+"},
-      "140" : {ion: "Ca", sup: "2+"},
+      "120" : {ion: "CO", sub:"3", sup: "2-"},
+      "130" : {ion: "S", sub:"", sup: "2-"},
+      "140" : {ion: "SO", sub:"4", sup: "2-"},
+      "150" : {ion: "NO", sub:"", sup: "2-"}
     };
     console.log(ion.sequence)
     console.log(sequence_map[ion.sequence])
-    return <DisplayIon cation = {sequence_map[ion.sequence]}/>
+    
+    return <DisplayIon cationDetail = {cation.cation} anion = {sequence_map[ion.sequence]}/>
    }
    else
    {
@@ -37,7 +43,7 @@ function CationAnalysis() {
           <div class="card-body text-center">
               <h4 class="card-title">{obs.OBS}</h4>
               <p class="card-description">Select from the options below</p>
-              <img src = {"https://res.cloudinary.com/dn7jk2swt/image/upload/v1667240302/salt-analysis/cation/" + obs.IMG + ".png"} width = '50%' height= '50%'/>
+              <img src = {"https://res.cloudinary.com/dn7jk2swt/image/upload/v1667409033/salt-analysis/anion/" + obs.IMG + ".png"} width = '50%' height= '50%'/>
               <hr class="mb-30"/>  
                 {
                     obs.OPTIONS.map(option => (
@@ -90,7 +96,7 @@ function CationAnalysis() {
       obs: observation
     }
     let nextObservation=""
-    fetch("http://127.0.0.1:5000/cation-analysis/next-observation",{
+    fetch("http://127.0.0.1:5000/anion-analysis/next-observation",{
       method: 'POST',
       mode: 'cors',
       body: JSON.stringify(currentObservation)
@@ -105,7 +111,7 @@ function CationAnalysis() {
         
       }
       else
-      fetch(`http://127.0.0.1:5000/cation-analysis/get-experiment?eid=${nextObservation}`,{
+      fetch(`http://127.0.0.1:5000/anion-analysis/get-experiment?eid=${nextObservation}`,{
       method: 'GET',
       mode: 'cors'
       })
@@ -138,5 +144,5 @@ function CationAnalysis() {
     
   }
   
-  export default CationAnalysis;
+  export default AnionAnalysis;
   

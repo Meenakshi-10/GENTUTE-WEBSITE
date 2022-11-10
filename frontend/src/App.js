@@ -9,7 +9,10 @@ import ExperimentList from "./Components/ExperimentList";
 import Landing from "./Components/Landing";
 import SingleExperiment from "./Components/SingleExperiment";
 import CationAnalysis from "./Components/CationAnalysis";
-import DisplayIon from './Components/DisplayIon';
+import AnionAnalysis from "./Components/AnionAnalysis";
+import DisplayCation from './Components/DisplayCation';
+import DisplayAnion from './Components/DisplayAnion';
+import DisplaySalt from './Components/DisplaySalt';
 
 function App() {
   return (
@@ -31,8 +34,17 @@ function App() {
           <Route path="/cation_analysis">
           <CationAnalysis/>
           </Route>
-          <Route path="/display_ion">
-          <DisplayIon/>
+          <Route path="/anion_analysis">
+          <AnionAnalysis/>
+          </Route>
+          <Route path="/display_cation">
+          <DisplayCation/>
+          </Route>
+          <Route path="/display_anion">
+          <DisplayAnion/>
+          </Route>
+          <Route path="/display_salt">
+          <DisplaySalt/>
           </Route>
           </Switch>
       </BrowserRouter>
