@@ -13,6 +13,7 @@ import AnionAnalysis from "./Components/AnionAnalysis";
 import DisplayCation from './Components/DisplayCation';
 import DisplayAnion from './Components/DisplayAnion';
 import DisplaySalt from './Components/DisplaySalt';
+import SaltAnalysisSummary from './Components/SaltAnalysisSummary';
 
 function App() {
   return (
@@ -45,6 +46,9 @@ function App() {
           </Route>
           <Route path="/display_salt">
           <DisplaySalt/>
+          </Route>
+          <Route path="/salt_analysis_summary">
+          <SaltAnalysisSummary/>
           </Route>
           </Switch>
       </BrowserRouter>

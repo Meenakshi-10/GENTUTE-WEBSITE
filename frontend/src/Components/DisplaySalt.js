@@ -2,6 +2,7 @@ import React from "react";
 import "./SingleObservation.css"
 import Navigation from "./Navbar";
 import { useLocation } from "react-router-dom";
+import { Link } from 'react-router-dom';
 function DisplaySalt() {
     const loc = useLocation()
     const cation = loc.state?.cation
@@ -34,6 +35,9 @@ function DisplaySalt() {
         </div>  
     </div>   
 </div>
+<Link to={{pathname: "/salt_analysis_summary"}}>
+<button style = {{marginLeft: "47%", marginTop: "2%"}}>Continue</button>
+</Link>
 </div>
     );
   }

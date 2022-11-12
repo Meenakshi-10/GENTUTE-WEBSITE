@@ -2,6 +2,7 @@ import cloudinary
 import cloudinary.uploader
 import cloudinary.api
 import json
+import time
 
 cloudinary.config( 
   cloud_name = "dn7jk2swt", 
@@ -18,6 +19,7 @@ def action_place(d, stepnum):
     img = d[0]
     path = list(img.keys())[0]
     if path=="memory":
+      time.sleep(3)
       p = "steps/" + str(stepnum-1) + ".png"
     else:
       p = "objects/" + path + "/" + list(img.values())[0] + ".png"
@@ -29,10 +31,11 @@ def action_place(d, stepnum):
 
 
 def action_heat(d, stepnum):
-  burner = "objects/apparatus/bunsen_burner.png"
+  burner = "objects/apparatus/bunsen_burner.jpg"
   o_img = d[1]  # this is the overlay image
   o_path = list(o_img.keys())[0]
   if(o_path == "memory"):
+    time.sleep(3)
     p2 = "!steps:" + str(stepnum-1) + "!"
   else:
     o_path = o_path.replace("/", ":")
@@ -44,6 +47,7 @@ def action_heat(d, stepnum):
       {'variables': [["$p", p2]]},
       {'overlay': "$p"},
       {'flags': "layer_apply", 'y': -250}
+      #was -250
   ])
   stepnum = "steps/" + str(stepnum)
   res = cloudinary.uploader.upload(img[10:-3], public_id =  stepnum)
@@ -54,6 +58,7 @@ def action_filter(d, stepnum):
   o_img = d[1] #this is the overlay image
   o_path = list(o_img.keys())[0]
   if(o_path == "memory"):
+    time.sleep(3)
     p2 = "!steps:" + str(stepnum-1) + "!"
   else:
     o_path = o_path.replace("/", ":")
@@ -74,6 +79,7 @@ def action_add(d, stepnum):
     o_img = d[1] #this is the overlay image
     o_path = list(o_img.keys())[0]
     if(o_path == "memory"):
+      time.sleep(3)
       p1 = "!steps:" + str(stepnum-1) + "!"
     else:
       o_path = o_path.replace("/", ":")
@@ -137,5 +143,5 @@ def cgi():
     else:
         stepURL=action_place(data[step], int(stepnum))
     urls.append(stepURL)
-  print(urls)
+  #print(urls)
   return urls
