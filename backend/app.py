@@ -59,6 +59,17 @@ def next_observation_cation():
         #out = [{"NEXT_OBS":i["NEXT_OBS"]} for i in res]
         #print(out)
         return jsonify({'next_obs':res["NEXT_OBS"]})
+
+@app.route('/cation-summary',methods=['POST'])
+def cation_summary():
+    if request.method == "POST":
+        data = json.loads(request.data)
+        print(data)
+        eid = int(data["eid"])
+        next_eid = int(data["nextEid"])
+        res = db_observations_cations.find_one({"$and": [{"EID": eid},{"NEXT_OBS":next_eid}]})
+        return jsonify({'option':res["OPTION"],'inf':res["INFERENCE"]})
+
 @app.route('/anion-analysis/get-experiment', methods=['GET'])
 def query_records_anion():
     eid = request.args.get('eid')

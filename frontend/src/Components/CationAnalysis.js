@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import "./SingleObservation.css"
 import Navigation from "./Navbar";
-import DisplayIon from "./DisplayCation";
+import DisplayCation from "./DisplayCation";
 
 function CationAnalysis() {
   const [obs, setObs] = useState({
     EID: 1,
     IMG: "1",
     OBS: "Dip a rod in conc. HCl then dip it in the salt and expose it to the flame. Observe the color of the flame.",
-    OPTIONS : [{name:"Crimson red",isObserved:false}, {name:"Brick red",isObserved:false},{name:"Green",isObserved:false},{name:"No Colour",isObserved:false}]
+    OPTIONS : [{name:"Crimson Red",isObserved:false}, {name:"Brick Red",isObserved:false},{name:"Green",isObserved:false}]
   });
   const [ion, setIon] = useState({end: 0, sequence: ""})
 
@@ -22,9 +22,14 @@ function CationAnalysis() {
       "130" : {ion: "Sr", sup: "2+"},
       "140" : {ion: "Ca", sup: "2+"},
     };
-    console.log(ion.sequence)
-    console.log(sequence_map[ion.sequence])
-    return <DisplayIon cation = {sequence_map[ion.sequence]}/>
+    let seq = "";
+    for(let i = 0; i < ion.sequence.length; i++){
+        if(ion.sequence[i] == "1")
+        seq = ion.sequence.substring(i);
+    }
+    console.log(seq)
+    console.log(sequence_map[seq])
+    return <DisplayCation cation = {sequence_map[seq]} cationSequence = {seq}/>
    }
    else
    {

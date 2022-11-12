@@ -7,6 +7,8 @@ function DisplaySalt() {
     const loc = useLocation()
     const cation = loc.state?.cation
     const anion = loc.state?.anion
+    const cationSequence = loc.state?.cationSequence
+    const anionSequence = loc.state?.anionSequence
     console.log("Anion sub:",anion.sup[0])
     let valency1 = anion.sup[0]
     let valency2 = cation.sup[0]
@@ -35,7 +37,7 @@ function DisplaySalt() {
         </div>  
     </div>   
 </div>
-<Link to={{pathname: "/salt_analysis_summary"}}>
+<Link to={{pathname: "/salt_analysis_summary" , state: {cation: cation, anion: anion, cationSequence: cationSequence, anionSequence: anionSequence}}}>
 <button style = {{marginLeft: "47%", marginTop: "2%"}}>Continue</button>
 </Link>
 </div>

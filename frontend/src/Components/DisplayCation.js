@@ -3,7 +3,7 @@ import "./SingleObservation.css"
 import AnionAnalysis from "./AnionAnalysis";
 import Navigation from "./Navbar";
 import { Link } from 'react-router-dom';
-function DisplayIon(props) {
+function DisplayCation(props) {
     console.log(props.cation)
     return (
         
@@ -29,5 +29,5 @@ function DisplayIon(props) {
     );
   }
   
-  export default DisplayIon;
+  export default DisplayCation;
   

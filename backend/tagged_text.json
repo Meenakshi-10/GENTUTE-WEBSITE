@@ -4,15 +4,34 @@
             "add": "in"
         },
         {
-            "chemicals/metal": "black"
+            "apparatus": "rod"
         },
         {
-            "chemicals/solution": "blue"
+            "chemicals/solution": "yellow"
         }
     ],
     "2": [
         {
-            "chemicals/solution": "green"
+            "add": "in"
+        },
+        {
+            "apparatus": "rod"
+        },
+        {
+            "chemicals/salt": "green"
+        }
+    ],
+    "3": [
+        {
+            "heat": "Heat"
+        },
+        {
+            "apparatus": "rod"
+        }
+    ],
+    "4": [
+        {
+            "chemicals/flame": "green"
         }
     ]
 }

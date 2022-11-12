@@ -2,7 +2,7 @@ import React from "react";
 import "./SingleObservation.css"
 import Navigation from "./Navbar";
 import { Link } from 'react-router-dom';
-function DisplayIon(props) {
+function DisplayAnion(props) {
     console.log(props.anion)
     console.log("Cation2:", props.cationDetail)
     return (
@@ -19,12 +19,12 @@ function DisplayIon(props) {
         </div>  
     </div>   
 </div>
-<Link to={{pathname: "/display_salt", state: {cation: props.cationDetail, anion: props.anion}}}>
+<Link to={{pathname: "/display_salt", state: {cation: props.cationDetail, anion: props.anion, cationSequence: props.cationSequence, anionSequence: props.anionSequence}}}>
 <button style = {{marginLeft: "47%", marginTop: "2%"}}>Continue</button>
 </Link>
 </div>
     );
   }
   
-  export default DisplayIon;
+  export default DisplayAnion;
   

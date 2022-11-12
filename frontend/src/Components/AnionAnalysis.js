@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./SingleObservation.css"
 import Navigation from "./Navbar";
-import DisplayIon from "./DisplayAnion";
+import DisplayAnion from "./DisplayAnion";
 import { useLocation } from "react-router-dom";
 
 function AnionAnalysis(props) {
@@ -27,10 +27,15 @@ function AnionAnalysis(props) {
       "140" : {ion: "SO", sub:"4", sup: "2-"},
       "150" : {ion: "NO", sub:"", sup: "2-"}
     };
-    console.log(ion.sequence)
-    console.log(sequence_map[ion.sequence])
+    let seq = "";
+    for(let i = 0; i < ion.sequence.length; i++){
+        if(ion.sequence[i] == "1")
+        seq = ion.sequence.substring(i);
+    }
+    console.log(seq)
+    console.log(sequence_map[seq])
     
-    return <DisplayIon cationDetail = {cation.cation} anion = {sequence_map[ion.sequence]}/>
+    return <DisplayAnion cationDetail = {cation.cation} anion = {sequence_map[seq]} cationSequence={cation.cationSequence} anionSequence = {seq}/>
    }
    else
    {
