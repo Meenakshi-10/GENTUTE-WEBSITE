@@ -29,8 +29,13 @@ function SingleExperiment(props) {
                     steps.map((step,index) => (
                         (
                             <div>
+                                <div style = {{backgroundColor: 'white'}}>
                                 <img src={urls[index]} style = {mystyle}/>
-                                <p style = {pstyle} className="legend">{step}</p>
+                                </div>
+                               <br/><br/>
+                               <br/><br/>
+                               <p style = {pstyle} className="legend">{step}</p>
+                               
                             </div>
                         )
                     ))

@@ -19,7 +19,7 @@ def action_place(d, stepnum):
     img = d[0]
     path = list(img.keys())[0]
     if path=="memory":
-      time.sleep(3)
+      #time.sleep(3)
       p = "memory/" + str(stepnum-1) + ".png"
     else:
       p = "objects/" + path + "/" + list(img.values())[0] + ".png"
@@ -37,7 +37,7 @@ def action_heat(d, stepnum):
   o_img = d[1]  # this is the overlay image
   o_path = list(o_img.keys())[0]
   if(o_path == "memory"):
-    time.sleep(3)
+    #time.sleep(3)
     p2 = "!memory:" + str(stepnum-1) + "!"
     memory_path = "memory/"+str(stepnum-1)+".png"
   else:
@@ -49,7 +49,7 @@ def action_heat(d, stepnum):
   img = cloudinary.CloudinaryImage(burner).image(transformation=[
       {'variables': [["$p", p2]]},
       {'overlay': "$p"},
-      {'flags': "layer_apply", 'y': -250}
+      {'flags': "layer_apply", 'y': -150}
       #was -250
   ])
   memory_img = cloudinary.CloudinaryImage(memory_path).image()
@@ -64,7 +64,7 @@ def action_filter(d, stepnum):
   o_img = d[1] #this is the overlay image
   o_path = list(o_img.keys())[0]
   if(o_path == "memory"):
-    time.sleep(3)
+    #time.sleep(3)
     p2 = "!steps:" + str(stepnum-1) + "!"
     memory_path = "memory/"+str(stepnum-1)+".png"
   else:
@@ -91,7 +91,7 @@ def action_add(d, stepnum):
     o_img = d[1] #this is the overlay image
     o_path = list(o_img.keys())[0]
     if(o_path == "memory"):
-      time.sleep(3)
+      #time.sleep(3)
       p1 = "!memory:" + str(stepnum-1) + "!"
     else:
       o_path = o_path.replace("/", ":")
@@ -99,7 +99,7 @@ def action_add(d, stepnum):
     
     b_path = list(b_img.keys())[0]
     if b_path=="memory":
-      p2 = "steps/" + str(stepnum-1) + ".png"
+      p2 = "memory/" + str(stepnum-1) + ".png"
     else:
       p2 = "objects/" + b_path + "/" + list(b_img.values())[0] + ".png"
 
@@ -112,7 +112,7 @@ def action_add(d, stepnum):
   {'variables': [["$p", p1]]},
   {'overlay': "$p"},
   {'angle' : 225},
-  {'flags': "layer_apply", 'y': -185, 'x': 60},
+  {'flags': "layer_apply", 'y': -120, 'x': 30},
   ])
     print(img)
     memorynum = "memory/" + str(stepnum)

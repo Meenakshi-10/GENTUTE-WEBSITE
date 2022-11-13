@@ -9,7 +9,7 @@
             "add": "Add"
         },
         {
-            "chemicals/solution": "yellow"
+            "chemicals/solution": "colorless"
         },
         {
             "memory": "it"
@@ -17,18 +17,29 @@
     ],
     "3": [
         {
-            "heat": "Heat"
+            "add": "Add"
+        },
+        {
+            "chemicals/solution": "colorless"
+        },
+        {
+            "memory": "it"
+        }
+    ],
+    "4": [
+        {
+            "heat": "Warm"
         },
         {
             "memory": "the mixture"
         }
     ],
-    "4": [
+    "5": [
         {
             "chemicals/solution": "colorless"
         }
     ],
-    "5": [
+    "6": [
         {
             "filter": "Filter"
         },
@@ -36,7 +47,7 @@
             "memory": "the solution"
         }
     ],
-    "6": [
+    "7": [
         {
             "heat": "Heat"
         },
@@ -44,12 +55,12 @@
             "memory": "it"
         }
     ],
-    "7": [
+    "8": [
         {
             "memory": "it"
         }
     ],
-    "8": [
+    "9": [
         {
             "chemicals/crystal": "green"
         },
