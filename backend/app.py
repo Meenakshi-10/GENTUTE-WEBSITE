@@ -81,6 +81,16 @@ def query_records_anion():
     else:
         return jsonify({'EID':res['EID'],'OBS':res['OBS'], 'IMG':res['IMG'], 'OPTIONS': res['OPTIONS']})
 
+@app.route('/anion-summary',methods=['POST'])
+def anion_summary():
+    if request.method == "POST":
+        data = json.loads(request.data)
+        print(data)
+        eid = int(data["eid"])
+        next_eid = int(data["nextEid"])
+        res = db_observations_anions.find_one({"$and": [{"EID": eid},{"NEXT_OBS":next_eid}]})
+        return jsonify({'option':res["OPTION"],'inf':res["INFERENCE"]})
+
 @app.route('/anion-analysis/next-observation',methods=['POST'])
 def next_observation_anion():
     if request.method == "POST":
