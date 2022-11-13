@@ -1,7 +1,7 @@
 {
     "1": [
         {
-            "chemicals/solution": "green"
+            "chemicals/solution": "brown"
         }
     ],
     "2": [
@@ -24,48 +24,6 @@
         },
         {
             "memory": "it"
-        }
-    ],
-    "4": [
-        {
-            "heat": "Warm"
-        },
-        {
-            "memory": "the mixture"
-        }
-    ],
-    "5": [
-        {
-            "chemicals/solution": "colorless"
-        }
-    ],
-    "6": [
-        {
-            "filter": "Filter"
-        },
-        {
-            "memory": "the solution"
-        }
-    ],
-    "7": [
-        {
-            "heat": "Heat"
-        },
-        {
-            "memory": "it"
-        }
-    ],
-    "8": [
-        {
-            "memory": "it"
-        }
-    ],
-    "9": [
-        {
-            "chemicals/crystal": "green"
-        },
-        {
-            "chemicals/solution": "colorless"
         }
     ]
 }

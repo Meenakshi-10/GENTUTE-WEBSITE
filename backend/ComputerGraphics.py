@@ -49,7 +49,7 @@ def action_heat(d, stepnum):
   img = cloudinary.CloudinaryImage(burner).image(transformation=[
       {'variables': [["$p", p2]]},
       {'overlay': "$p"},
-      {'flags': "layer_apply", 'y': -150}
+      {'flags': "layer_apply", 'y': -110}
       #was -250
   ])
   memory_img = cloudinary.CloudinaryImage(memory_path).image()
@@ -105,6 +105,7 @@ def action_add(d, stepnum):
 
     memory_img =  cloudinary.CloudinaryImage(p2).image()
     #o_path = o_path.replace("/", ":")
+    print("MEMORY IMAGE:", memory_img)
     print(p1)
     print(p2)
 
@@ -118,7 +119,8 @@ def action_add(d, stepnum):
     memorynum = "memory/" + str(stepnum)
     stepnum = "steps/" + str(stepnum)
     res = cloudinary.uploader.upload(img[10:-3], public_id =  stepnum)
-    cloudinary.uploader.upload(memory_img[10:-3], public_id =  memorynum)
+    re = cloudinary.uploader.upload(memory_img[10:-3], public_id =  memorynum)
+    print("MEMORY URL",re['url'])
     return res['url']
 
 
