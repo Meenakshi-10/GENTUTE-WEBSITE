@@ -1,24 +1,18 @@
 {
     "1": [
         {
-            "add": "in"
-        },
-        {
-            "apparatus": "rod"
-        },
-        {
-            "chemicals/solution": "yellow"
+            "chemicals/solution": "green"
         }
     ],
     "2": [
         {
-            "add": "in"
+            "add": "Add"
         },
         {
-            "apparatus": "rod"
+            "chemicals/solution": "yellow"
         },
         {
-            "chemicals/salt": "green"
+            "memory": "it"
         }
     ],
     "3": [
@@ -26,12 +20,41 @@
             "heat": "Heat"
         },
         {
-            "apparatus": "rod"
+            "memory": "the mixture"
         }
     ],
     "4": [
         {
-            "chemicals/flame": "green"
+            "chemicals/solution": "colorless"
+        }
+    ],
+    "5": [
+        {
+            "filter": "Filter"
+        },
+        {
+            "memory": "the solution"
+        }
+    ],
+    "6": [
+        {
+            "heat": "Heat"
+        },
+        {
+            "memory": "it"
+        }
+    ],
+    "7": [
+        {
+            "memory": "it"
+        }
+    ],
+    "8": [
+        {
+            "chemicals/crystal": "green"
+        },
+        {
+            "chemicals/solution": "colorless"
         }
     ]
 }
