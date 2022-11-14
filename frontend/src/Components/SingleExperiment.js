@@ -16,10 +16,10 @@ const pstyle = {
 };
 
 function SingleExperiment(props) {
-    console.log(props.steps)
+    console.log(props.urls)
     const steps= props.steps
     const urls = props.urls
-    
+    window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
     return (
         <div style = {{backgroundColor: '#ececec', height: '100vh'}}>
         <Navigation />

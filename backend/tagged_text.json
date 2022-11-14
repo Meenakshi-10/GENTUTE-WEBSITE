@@ -1,7 +1,7 @@
 {
     "1": [
         {
-            "chemicals/litmus": "blue"
+            "chemicals/solution": "green"
         }
     ],
     "2": [
@@ -12,12 +12,49 @@
             "chemicals/solution": "colorless"
         },
         {
-            "memory": "the paper"
+            "memory": "it"
         }
     ],
     "3": [
         {
-            "chemicals/litmus": "red"
+            "heat": "Heat"
+        },
+        {
+            "memory": "the mixture"
+        }
+    ],
+    "4": [
+        {
+            "chemicals/solution": "colorless"
+        }
+    ],
+    "5": [
+        {
+            "filter": "Filter"
+        },
+        {
+            "memory": "the solution"
+        }
+    ],
+    "6": [
+        {
+            "heat": "Heat"
+        },
+        {
+            "memory": "it"
+        }
+    ],
+    "7": [
+        {
+            "memory": "it"
+        }
+    ],
+    "8": [
+        {
+            "chemicals/crystal": "green"
+        },
+        {
+            "chemicals/solution": "colorless"
         }
     ]
 }

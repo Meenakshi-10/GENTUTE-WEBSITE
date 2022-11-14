@@ -61,7 +61,7 @@ def action_heat(d, stepnum,mem_exc,mem_slash):
   img = cloudinary.CloudinaryImage(burner).image(transformation=[
       {'variables': [["$p", p2]]},
       {'overlay': "$p"},
-      {'flags': "layer_apply", 'y': -150}
+      {'flags': "layer_apply", 'y': -110}
       #was -250
   ])
   #memory_img = cloudinary.CloudinaryImage(memory_path).image()
