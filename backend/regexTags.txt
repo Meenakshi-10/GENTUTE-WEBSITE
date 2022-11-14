@@ -3,7 +3,7 @@ red-flame->\b(red flame)\b
 green-flame->\b(green flame)\b
 violet-flame->\b(violet flame)\b
 yellow-flame->\b(yellow flame)\b
-white-salt->\b(NH4SO4)|(Na|Ca|Ba|Mg|Li|Zn)([0-9]?)((C|N|O|F|P|S|Cl|Br)([0-9]?))+\b
+white-salt->\b(NH4SO4)|(NaHCO3)|(Na|Ca|Ba|Mg|Li|Zn)([0-9]?)((C|N|O|F|P|S|Cl|Br)([0-9]?))+\b
 blue-solution->\b(CuSO4 solution)\b
 brown-solution->\b(FeCl3|Br2 solution)\b
 brown-solution->\s(\(NH4\)2\[Ce\(NO3\)6\])\s
@@ -11,8 +11,9 @@ yellow-solution->\b(I2 solution)\b
 purple-solution->\b(KMnO4 solution|purple solution)\b
 green-solution->\b(FeSO4 solution|green solution|green filtrate)\b
 orange-solution->\b(orange solution)\b
-colorless-solution->\b(NaOH|KOH|K2C2O4|C2H4|C2H6|C3H6|C3H8|C2H5OH|CH3OH|CH3CHO|C2H5OH|H2O|colorless solution|clear filtrate|H2SO4|HCl|clear solution)\b
+colorless-solution->\b(NaOH|KOH|K2C2O4|C2H4|C2H6|C3H6|C3H8|C2H5OH|CH3OH|CH3CHO|C2H5OH|H2O|CH3COOH|colorless solution|clear filtrate|H2SO4|HCl|clear solution)\b
 colorless-solution->\s(\(NH4\)2SO4)\s
+milky-solution->\b(milky)\b
 blue-salt->\b(CuSO4 salt)\b
 green-salt->\b(FeSO4 salt)\b
 purple-salt->\b(KCl salt)\b
@@ -26,4 +27,6 @@ green-crystal->\s(\(NH4\)2Fe\(SO4\)2\(H2O\)6|K3\[Fe\(C2O4\)3\]\.3H2O)\s
 add->\b(in|on|into|onto|(A|a)dd)\b
 heat->\b((H|h)eat|(W|w)arm)\b
 filter->\b((F|f)ilter)\b
-memory->\b((i|I)t|the (beaker|mixture|solution|test tube|filtrate))\b
+red-litmus->\b(red litmus paper|litmus turns red)\b
+blue-litmus->\b(blue litmus paper|litmus turns blue)\b
+memory->\b((i|I)t|(T|t)he (beaker|mixture|solution|test tube|filtrate|paper))\b

@@ -58,7 +58,7 @@ def generate_json(d):
 
                 action.append(dic)
                 continue
-            matchObj = re.search(r"[\s]?([a-z]+)[-](metal|salt|solution|crystal|flame|precipitate)[\s\.]?", tag[1])
+            matchObj = re.search(r"[\s]?([a-z]+)[-](metal|salt|solution|crystal|flame|precipitate|litmus)[\s\.]?", tag[1])
             if(matchObj!=None):
                 dic = {}
                 dic[matchObj.group(2)] = matchObj.group(1)

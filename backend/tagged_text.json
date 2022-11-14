@@ -1,7 +1,7 @@
 {
     "1": [
         {
-            "chemicals/solution": "brown"
+            "chemicals/litmus": "blue"
         }
     ],
     "2": [
@@ -12,18 +12,12 @@
             "chemicals/solution": "colorless"
         },
         {
-            "memory": "it"
+            "memory": "the paper"
         }
     ],
     "3": [
         {
-            "add": "Add"
-        },
-        {
-            "chemicals/solution": "colorless"
-        },
-        {
-            "memory": "it"
+            "chemicals/litmus": "red"
         }
     ]
 }

@@ -1,8 +1,4 @@
-import logo from './logo.svg';
 import './App.css';
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
-import Navigation from "./Components/Navbar";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import CustomExperiment from "./Components/CustomExperiment";
 import ExperimentList from "./Components/ExperimentList";
@@ -17,7 +13,7 @@ import SaltAnalysisSummary from './Components/SaltAnalysisSummary';
 
 function App() {
   return (
-    <div style = {{backgroundColor: '#ececec', height: '100vh'}}>
+    <div style = {{backgroundColor:'#d3d3d3', height: '1500px'}}>
       <BrowserRouter>
         <Switch>
           <Route exact path="/">

@@ -10,7 +10,7 @@ function Navigation() {
           <Navbar.Brand href="/">GENTUTE</Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link href="/custom_experiment">Custom Experiment</Nav.Link>
-            <Nav.Link href="/all_experiment">All Experiments</Nav.Link>
+            <Nav.Link href="/all_experiment">Salt Analysis</Nav.Link>
           </Nav>
         </Container>
       </Navbar>

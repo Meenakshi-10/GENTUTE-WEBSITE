@@ -20,17 +20,6 @@ function ExperimentList() {
                 </a>
                 </div>
             </div>
-            <div style = {{backgroundColor: 'white', width: '70%', height: '20%', marginTop: '3%'}}>
-                <div style = {{padding: '2%'}}>
-                <h4>LiCl2 Experiment</h4>
-                <a href = "/single_experiment">
-                <Button variant="dark">View</Button>
-                </a>
-                </div>
-            </div>
-            
-                
-
             </div>
         </div>
         
