@@ -21,7 +21,7 @@ function SingleExperiment(props) {
     const urls = props.urls
     window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
     return (
-        <div style = {{backgroundColor: '#ececec', height: '100vh'}}>
+        <div style = {{backgroundColor: '#d3d3d3', height: '100vh'}}>
         <Navigation />
         <div style = {{width: '35%', height: '35%', marginLeft: '32%', marginTop: '5%'}}>
         <Carousel showThumbs = {false} showArrows={true}>
