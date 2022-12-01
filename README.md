@@ -4,5 +4,7 @@ This project is aimed at high school students who can use it as an online refere
 The project implementation has been split into 3 parts: NLP module, CG module and Main module.
 
 Images have been created using edraw tool: https://www.edrawmax.com/
+
 Image generation has been done using Cloudinary API tool: https://cloudinary.com
+
 NLP tagging features a similar model to that of OSCAR: https://github.com/BlueObelisk/oscar4.git 
