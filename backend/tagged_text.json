@@ -17,15 +17,21 @@
     ],
     "3": [
         {
-            "heat": "Heat"
+            "add": "Add"
         },
         {
-            "memory": "the mixture"
+            "chemicals/solution": "colorless"
+        },
+        {
+            "memory": "it"
         }
     ],
     "4": [
         {
-            "chemicals/solution": "colorless"
+            "heat": "Warm"
+        },
+        {
+            "memory": "the mixture"
         }
     ],
     "5": [

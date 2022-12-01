@@ -1,5 +1,3 @@
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
 import Navigation from "./Navbar";
 import backroundPic from "./backroundPic.jpg"
 
@@ -11,7 +9,7 @@ function Landing() {
         <img src = {backroundPic} style = {{width: '650px', height: '250px'}}/>
         <h3 style = {{'margin' : '5%', 'text-align': 'center', color: '#d9d9d9', 'font-family': 'Trebuchet MS'}}>
                         Visualise Chemistry Experiments with GENTUTE. Click on custom experiment to 
-                        input an experiment text or all experiments to view all available experiments.</h3>
+                        input an experiment text or salt analysis for an interactive tutorial.</h3>
         </div>
         </div>
         
