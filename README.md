@@ -1,4 +1,4 @@
-# GENTUTE
+# Text to media: Generation of multimedia tutorials from education material as a teaching aid (GENTUTE)
 This is a web-tutorial designed as a part of the project requirement assessment for the Capstone project at PES University.
 This project is aimed at high school students who can use it as an online reference guide while performing chemistry experiments. Experiments are added as input in the form of text and generates images, which are displayed on the website.  
 The project implementation has been split into 3 parts: NLP module, CG module and Main module.
